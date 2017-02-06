@@ -9,8 +9,9 @@
     "webpack": "^2.2.1"
   },
   "scripts": {
-    "build": "webpack",
-    "build-production": "webpack -p",
+    "build": "yarn clean-bundle && webpack --optimize-minimize --progress",
+    "build-production": "yarn clean-bundle && webpack --config=webpack.production.config.js --optimize-minimize --progress -p",
+    "clean-bundle": "rm -rf build",
     "start": "webpack-dev-server"
   },
   "devDependencies": {
