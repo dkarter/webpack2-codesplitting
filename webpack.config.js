@@ -1,14 +1,20 @@
 var path = require('path');
+var webpack = require('webpack');
+
+const VENDOR_LIBS = [
+  'faker',
+];
 
 module.exports = {
   devtool: 'inline-source-map',
-  entry: [
-    './src/index.js'
-  ],
+  entry: {
+    bundle: './src/index.js',
+    vendor: VENDOR_LIBS,
+  },
   output: {
     path: path.join(__dirname, 'build'),
     publicPath: '/build/',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -22,6 +28,11 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
+    })
+  ],
   devServer: {
     historyApiFallback: true,
     contentBase: './',

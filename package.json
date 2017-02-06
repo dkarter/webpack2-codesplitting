@@ -5,10 +5,12 @@
   "repository": {},
   "license": "MIT",
   "dependencies": {
+    "faker": "^3.1.0",
     "webpack": "^2.2.1"
   },
   "scripts": {
     "build": "webpack",
+    "build-production": "webpack -p",
     "start": "webpack-dev-server"
   },
   "devDependencies": {
