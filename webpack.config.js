@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 const VENDOR_LIBS = [
-  'faker',
+  'faker', 'lodash'
 ];
 
 module.exports = {
