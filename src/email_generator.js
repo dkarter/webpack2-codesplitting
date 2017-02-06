@@ -1,7 +1,8 @@
 import { internet } from 'faker';
 
+console.log('Required email generator');
+
 export function generateFakeEmail() {
-  console.log('Initializing email generator');
   const emailDiv = document.createElement('div');
   emailDiv.innerText = internet.email().toLowerCase();
   document.body.append(emailDiv);
