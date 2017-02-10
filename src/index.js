@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   generateEmailButton.onclick = () => {
     System.import('./email_generator').then(module => {
       module.generateFakeEmail();
-    })
+    });
   };
 
   document.body.appendChild(generateEmailButton);

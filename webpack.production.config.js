@@ -8,7 +8,7 @@ module.exports = Object.assign({}, devConfig, {
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
+      name: 'vendor',
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
@@ -35,7 +35,7 @@ module.exports = Object.assign({}, devConfig, {
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production'),
+        NODE_ENV: JSON.stringify('production'),
       },
     }),
   ],
